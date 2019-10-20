@@ -125,6 +125,7 @@ var renderNoteList = function(notes) {
 
 // Gets notes from the db and renders them to the sidebar
 var getAndRenderNotes = async function() {
+    $saveNoteBtn.attr('style', 'display:none')
     let noteList = await getNotes();
     console.log(noteList)
     noteList.map(item => renderNoteList(item) );

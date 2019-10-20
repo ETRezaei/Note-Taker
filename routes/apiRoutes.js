@@ -8,11 +8,11 @@ module.exports = function(app) {
     i = 1
     app.post("/api/notes", function(req, res){
         var newNote = req.body;
-        let data = JSON.parse(db);
-        data["id"] = i;
+        let data = db
+        newNote["id"] = i;
         data.push(newNote);
         
-        fs.appendFile(path.join(__dirname, '../database/db.json'), newDB, 'utf8', function(err) {
+        fs.appendFile(path.join(__dirname, '../database/db.json'), data, 'utf8', function(err) {
             if (err) throw err;
             console.log('json updated!');
         })
