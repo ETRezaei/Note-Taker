@@ -32,7 +32,7 @@ module.exports = function(app) {
             };
         };
         let newDb = JSON.stringify(db);
-        fs.writeFile(path.join(__dirname, '../db/db.json'), newDb, 'utf8', function(err) {
+        fs.writeFile(path.join(__dirname, '../database/db.json'), newDb, 'utf8', function(err) {
             if (err) throw err;
             console.log('deleted!');
         });
